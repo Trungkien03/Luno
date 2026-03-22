@@ -1,0 +1,64 @@
+# ==================================
+# Xcode & Swift Standard .gitignore
+# ==================================
+
+# OS X / macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# User settings (Cấu hình IDE của từng máy cá nhân)
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Build & Derived Data (Các file sinh ra lúc ấn Cmd + R)
+build/
+DerivedData/
+*.moved-aside
+*.xcscmblueprint
+*.xccheckout
+*.hmap
+
+# Crash logs & App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# ==================================
+# Package Managers
+# ==================================
+
+# Swift Package Manager (SPM)
+.build/
+
+# CocoaPods (Nếu bạn dùng)
+# Bỏ comment dòng dưới nếu KHÔNG muốn push thư mục Pods lên Git để giảm dung lượng
+# Pods/
+
+# Carthage (Nếu bạn dùng)
+Carthage/Build/
+
+# ==================================
+# Tools & Environments
+# ==================================
+
+# fastlane (Bỏ qua ảnh chụp màn hình và báo cáo tự động)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Môi trường và biến bí mật (Đừng bao giờ push key lên git)
+.env
+secret.xcconfig
+
+# Crashlytics / Firebase
+*/com.crashlytics.mac/
+
+# Thiết lập của Coverage hoặc Test
+*.xcresult/
