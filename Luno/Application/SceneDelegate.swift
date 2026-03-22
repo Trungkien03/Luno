@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     private let appDIContainer = AppDIContainer()
+    private let appAppearance = AppAppearance()
     private var appFlowCoordinator: AppFlowCoordinator?
 
     func scene(
@@ -28,6 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             navigationController: navigationController,
             appDIContainer: appDIContainer
         )
+        appAppearance.handleIQKeyboardManager()
+        appAppearance.handleIQKeyboardToolbarManager()
         appFlowCoordinator?.start()
         window?.makeKeyAndVisible()
     }

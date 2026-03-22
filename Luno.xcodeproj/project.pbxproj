@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		106372452F6D05650089A927 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 106372442F6D05650089A927 /* SnapKit */; };
+		E426C8522F6FC1020013AA9A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E426C8512F6FC1020013AA9A /* IQKeyboardManagerSwift */; };
+		E426C8552F6FC4140013AA9A /* IQKeyboardToolbarManager in Frameworks */ = {isa = PBXBuildFile; productRef = E426C8542F6FC4140013AA9A /* IQKeyboardToolbarManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E426C8552F6FC4140013AA9A /* IQKeyboardToolbarManager in Frameworks */,
 				106372452F6D05650089A927 /* SnapKit in Frameworks */,
+				E426C8522F6FC1020013AA9A /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +143,8 @@
 			name = Luno;
 			packageProductDependencies = (
 				106372442F6D05650089A927 /* SnapKit */,
+				E426C8512F6FC1020013AA9A /* IQKeyboardManagerSwift */,
+				E426C8542F6FC4140013AA9A /* IQKeyboardToolbarManager */,
 			);
 			productName = iOS_CleanArchitecture;
 			productReference = 10D0DBB12F6A8A9D00E663F3 /* Luno.app */;
@@ -224,6 +230,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				10D0DBED2F6A8B2A00E663F3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E426C8502F6FC0E40013AA9A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E426C8532F6FC3900013AA9A /* XCRemoteSwiftPackageReference "IQKeyboardToolbarManager" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 10D0DBB22F6A8A9D00E663F3 /* Products */;
@@ -624,6 +632,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		E426C8502F6FC0E40013AA9A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.2;
+			};
+		};
+		E426C8532F6FC3900013AA9A /* XCRemoteSwiftPackageReference "IQKeyboardToolbarManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardToolbarManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -631,6 +655,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10D0DBED2F6A8B2A00E663F3 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		E426C8512F6FC1020013AA9A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E426C8502F6FC0E40013AA9A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		E426C8542F6FC4140013AA9A /* IQKeyboardToolbarManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E426C8532F6FC3900013AA9A /* XCRemoteSwiftPackageReference "IQKeyboardToolbarManager" */;
+			productName = IQKeyboardToolbarManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
