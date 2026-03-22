@@ -17,7 +17,7 @@ struct SettingItem {
 }
 
 struct SettingSection {
-    let title: String?          // Header label (nil = no header)
+    let title: String?
     let items: [SettingItem]
 }
 
