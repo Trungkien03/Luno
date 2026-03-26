@@ -57,4 +57,6 @@ extension ChatDIContainer {
         viewModel.conversationId = conversationId
         return ChatDetailViewController(viewModel: viewModel)
     }
+    
+    
 }

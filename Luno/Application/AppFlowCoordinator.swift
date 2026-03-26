@@ -25,26 +25,30 @@ protocol AppNavigator: AnyObject {
 }
 
 enum AppTabBarSource: Int, CaseIterable {
-    case chat = 0
+//    case chat = 0
+    case scripture = 0
     case settings = 1
     
     var tabName: String {
         switch self {
-        case .chat: return "Chat"
+//        case .chat: return "Chat"
+        case .scripture: return "Scripture"
         case .settings: return "Settings"
         }
     }
     
     var iconName: UIImage {
         switch self {
-        case .chat: return UIImage(systemName: "message") ?? UIImage()
+//        case .chat: return UIImage(systemName: "message") ?? UIImage()
+        case .scripture: return UIImage(systemName: "book") ?? UIImage()
         case .settings: return UIImage(systemName: "gearshape") ?? UIImage()
         }
     }
     
     var selectedIconName: UIImage {
         switch self {
-        case .chat: return UIImage(systemName: "message.fill") ?? UIImage()
+//        case .chat: return UIImage(systemName: "message.fill") ?? UIImage()
+        case .scripture: return UIImage(systemName: "book.fill") ?? UIImage()
         case .settings: return UIImage(systemName: "gearshape.fill") ?? UIImage()
         }
     }
@@ -93,7 +97,7 @@ class DefaultAppFlowCoordinator: NSObject, AppFlowCoordinator {
     private func showMainTabBar() {
         let tabBarController = UITabBarController()
         
-        let viewControllers = [makeChatFlow(), makeSettingFlow()]
+        let viewControllers = [makeScriptureFlow(), makeSettingFlow()]
         
         tabBarController.viewControllers = viewControllers
         tabBarController.tabBar.tintColor = .systemBlue
@@ -118,13 +122,26 @@ class DefaultAppFlowCoordinator: NSObject, AppFlowCoordinator {
 // MARK: - 6. CHẾ TẠO CÁC NHÁNH MODULE (MODULE FACTORY)
 extension DefaultAppFlowCoordinator {
     
-    private func makeChatFlow() -> UINavigationController {
+//    private func makeChatFlow() -> UINavigationController {
+//        let navVC = UINavigationController()
+//        navVC.tabBarItem = AppTabBarSource.chat.tabBarItem
+//        
+//        let chatDI = appDIContainer.makeChatDIContainer()
+//        // Nhồi chính bản thân (self as AppNavigator) vào Coordinator con để nó có thể réo tên lúc cần
+//        let flow = chatDI.makeChatFlowCoordinator(navigationController: navVC, appNavigator: self)
+//        childCoordinators.append(flow)
+//        flow.start()
+//        
+//        return navVC
+//    }
+    
+    private func makeScriptureFlow() -> UINavigationController {
         let navVC = UINavigationController()
-        navVC.tabBarItem = AppTabBarSource.chat.tabBarItem
+        navVC.tabBarItem = AppTabBarSource.scripture.tabBarItem
         
-        let chatDI = appDIContainer.makeChatDIContainer()
+        let scriptureDI = appDIContainer.makeScriptureDIContainer()
         // Nhồi chính bản thân (self as AppNavigator) vào Coordinator con để nó có thể réo tên lúc cần
-        let flow = chatDI.makeChatFlowCoordinator(navigationController: navVC, appNavigator: self)
+        let flow = scriptureDI.makeScriptureFlowCoordinator(navigationController: navVC, appNavigator: self)
         childCoordinators.append(flow)
         flow.start()
         

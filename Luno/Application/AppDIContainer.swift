@@ -20,7 +20,6 @@ class AppDIContainer {
     // MARK: - Luồng Modules (DIContainers)
     
     func makeChatDIContainer() -> ChatDIContainer {
-        // Sinh ra ChatDI và truyền cho nó cái Tầng Mạng để gọi API
         let dependencies = ChatDIContainer.Dependencies(apiClient: apiClient)
         return ChatDIContainer(dependencies: dependencies)
     }
@@ -28,5 +27,10 @@ class AppDIContainer {
     func makeSettingDIContainer() -> SettingDIContainer {
         let dependencies = SettingDIContainer.Dependencies(apiClient: apiClient)
         return SettingDIContainer(dependencies: dependencies)
+    }
+    
+    func makeScriptureDIContainer() -> ScriptureDIContainer {
+        let dependencies = ScriptureDIContainer.Dependencies(apiClient: apiClient)
+        return ScriptureDIContainer(dependencies: dependencies)
     }
 }
